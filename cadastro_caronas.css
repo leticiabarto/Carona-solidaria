@@ -1,0 +1,84 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #6a1b9a; /* Fundo roxo */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+}
+
+h1 {
+    color: #6a1b9a; /* Cor roxa para o título */
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: bold;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="number"]:focus {
+    border-color: #6a1b9a; /* Cor roxa para o foco */
+    outline: none;
+    box-shadow: 0 0 5px rgba(106, 27, 154, 0.5);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #6a1b9a; /* Botão roxo */
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4a148c; /* Tom mais escuro de roxo ao passar o mouse */
+}
+
+/* Estilo para os campos opcionais */
+input[type="text"][name="motorista"],
+input[type="text"][name="veiculo"] {
+    background-color: #f9f9f9; /* Fundo mais claro para campos opcionais */
+}
+
+/* Mensagem de sucesso (caso queira adicionar no PHP) */
+.success-message {
+    color: #4caf50;
+    font-weight: bold;
+    margin-top: 20px;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback e Avaliações</title>
+  <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+<div class="container">
+  <h1>Feedback e Avaliações</h1>
+  <!-- Formulário de Avaliação -->
+  <form action="processar_feedback.php" method="POST" class="feedback-form">
+    <label for="avaliador">Seu Nome:</label>
+    <input type="text" id="avaliador" name="avaliador" required>
+
+    <label for="avaliado">Avaliado (Motorista/Passageiro):</label>
+    <input type="text" id="avaliado" name="avaliado" required>
+
+    <label for="tipo">Tipo de Avaliação:</label>
+    <select id="tipo" name="tipo" required>
+      <option value="motorista">Avaliar Motorista</option>
+      <option value="passageiro">Avaliar Passageiro</option>
+    </select>
+
+    <label for="nota">Nota (1 a 5):</label>
+    <input type="number" id="nota" name="nota" min="1" max="5" required>
+
+    <label for="comentario">Comentário:</label>
+    <textarea id="comentario" name="comentario" rows="4" required></textarea>
+
+    <button type="submit">Enviar Avaliação</button>
+  </form>
+
+  <!-- Exibição das Avaliações -->
+  <div class="avaliacoes">
+    <h2>Avaliações Recebidas</h2>
+    <div class="avaliacao">
+      <p><strong>Avaliador:</strong> João Silva</p>
+      <p><strong>Avaliado:</strong> Maria Souza</p>
+      <p><strong>Tipo:</strong> Motorista</p>
+      <p><strong>Nota:</strong> 5</p>
+      <p><strong>Comentário:</strong> Excelente motorista, muito pontual!</p>
+    </div>
+    <div class="avaliacao">
+      <p><strong>Avaliador:</strong> Carlos Oliveira</p>
+      <p><strong>Avaliado:</strong> Ana Costa</p>
+      <p><strong>Tipo:</strong> Passageiro</p>
+      <p><strong>Nota:</strong> 4</p>
+      <p><strong>Comentário:</strong> Boa companhia para viagem.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

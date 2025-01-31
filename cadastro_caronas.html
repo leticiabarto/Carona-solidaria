@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Caronas</title>
+    <link rel="stylesheet" href="cadastro_caronas.css">
+</head>
+<body>
+<div class="container">
+    <h1>Cadastro de Caronas</h1>
+    <form action="processar_carona.php" method="POST">
+        <label for="origem">Origem:</label>
+        <input type="text" id="origem" name="origem" required>
+
+        <label for="destino">Destino:</label>
+        <input type="text" id="destino" name="destino" required>
+
+        <label for="data">Data:</label>
+        <input type="date" id="data" name="data" required>
+
+        <label for="horario">Horário:</label>
+        <input type="time" id="horario" name="horario" required>
+
+        <label for="vagas">Quantidade de Vagas:</label>
+        <input type="number" id="vagas" name="vagas" min="1" required>
+
+        <label for="motorista">Informações sobre o Motorista (opcional):</label>
+        <input type="text" id="motorista" name="motorista">
+
+        <label for="veiculo">Informações sobre o Veículo (opcional):</label>
+        <input type="text" id="veiculo" name="veiculo">
+
+        <button type="submit">Cadastrar Carona</button>
+    </form>
+</div>
+</body>
+</html>
