@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat - Carona Solidária</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #e0b3ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .chat-container {
+      width: 350px;
+      height: 500px;
+      background: linear-gradient(135deg, #4b0082, #9400d3);
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      overflow-y: scroll;
+      padding: 15px;
+    }
+
+    h2 {
+      font-size: 20px;
+      text-align: center;
+      color: #444;
+      margin-bottom: 15px;
+    }
+
+    .messages {
+      flex: 1;
+      overflow-y: auto;
+      padding-bottom: 10px;
+    }
+
+    .message {
+      display: flex;
+      margin-bottom: 15px;
+      animation: slideIn 0.3s ease-in-out;
+    }
+
+    .message p {
+      max-width: 75%;
+      padding: 10px 15px;
+      border-radius: 25px;
+      font-size: 14px;
+      background-color: rgba(106, 13, 173, 0.9);
+      color: white;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .message.passageiro p {
+      background-color: #ff1493;
+      border-bottom-left-radius: 0;
+    }
+
+    .message.motorista p {
+      background-color: #ff69b4;
+      border-bottom-right-radius: 0;
+      align-self: flex-end;
+    }
+
+    .input-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .input-container input {
+      width: 80%;
+      padding: 12px;
+      border-radius: 25px;
+      border: none;
+      font-size: 14px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .input-container button {
+      background-color:  #ff1493;
+      color: white;
+      border-radius: 50%;
+      border: none;
+      padding: 12px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .input-container button:hover {
+      background-color: #ff69b4;
+    }
+
+    @keyframes slideIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="chat-container">
+  <h2>Carona Solidária - Chat</h2>
+
+  <div class="messages" id="messages">
+    <?php foreach ($mensagens as $mensagem): ?>
+    <div class="message <?php echo $mensagem['tipo_usuario'] == 'passageiro' ? 'passageiro' : 'motorista'; ?>">
+      <p><?php echo $mensagem['mensagem']; ?></p>
+    </div>
+    <?php endforeach; ?>
+  </div>
+
+  <div class="input-container">
+    <form method="POST">
+      <input type="text" name="mensagem" id="mensagemInput" placeholder="Digite sua mensagem..." required>
+      <button type="submit">➤</button>
+      <input type="hidden" name="tipo_usuario" value="passageiro"> <!-- Ou motorista -->
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
+
